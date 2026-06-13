@@ -1,13 +1,10 @@
-#Read a file and handle errors
+#Read a file and handle exceptions
 try:
-    file = open("sample.txt", "r")
+    with open("sample.txt", "r") as file:
+        print("Reading file content:")
 
-    print("Reading file content:")
-
-    for line in file:
-        print(line.strip())
-
-    file.close()
+        for line in file:
+            print(line.strip())
 
 except FileNotFoundError:
     print("Error: The file 'sample.txt' was not found.")
